@@ -2,7 +2,7 @@
     box-sizing:border-box; 
  }
  
- body {
+ body:not(:last-child) {
      margin: 0;
      padding: 1em;
      max-width: 100%;
@@ -11,6 +11,12 @@
  p{
     font-size: 1rem;
     color: #565365;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
  }
  /* Remove default margin */
 body,
@@ -19,11 +25,26 @@ h2,
 h3,
 h4,
 p,
+a,
 figure,
 blockquote,
 dl,
 dd {
+  font-family: 'Inter';
+  font-style: normal;
   margin: 0;
+}
+
+h4{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    color: #0E0A23;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
 a{
@@ -76,8 +97,6 @@ ol[role="list"] {
     padding: 1rem;
     display: block;
     color: #565365;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;    
 }
@@ -87,16 +106,12 @@ li:first-child a {
 .navbar-links li:first-child a:hover {
     color: #F01159;
     background-color: #E5EAEE;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
 }
 
 .navbar-links li a:hover {
     color: #003458;
     background-color: #E5EAEE;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
 }
 
@@ -120,10 +135,8 @@ li:first-child a {
 
 .brand {
     color: #F01159;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
-    font-size: 20px;font-family: 'Inter';
+    font-size: 20px;
     font-style: normal;
     margin: .5rem;
 }
@@ -181,8 +194,6 @@ li:first-child a {
      width:60%;
      top:2em;
      left: 0;
-     /* padding: 0; */
-     /* margin:0; */
 }
 .second-container-first h3{
     color: white;
@@ -244,8 +255,6 @@ li:first-child a {
     .third-container-article img{
         display: inline-block;
    }
-}
-.forth-container{
 }
 
 .forth-container > *{
@@ -332,7 +341,21 @@ li:first-child a {
     padding: 1em;
 }
 
-.fifth-container-img{
+.fifth-container{
+    position: relative;
+    background-image: url("/assets/Frame\ 35.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: 40em;
+}
+
+.article-fifth{
+    width: 50%;
+} 
+
+
+/* .fifth-container-img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -342,36 +365,57 @@ li:first-child a {
     width: 100%;
     height: 30em;
     object-fit:contain;
-}
+} */
+/* .article-fifth{
+ position: absolute;
+} */
 
-@media (min-width: 50em) {
-    .fifth-container {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-    .fifth-container-img{
-        flex-grow: 2;
-    }
-
+@media (max-width: 50em) {
     .article-fifth{
-        width: 50%;
-        flex-grow: 1;
-    }   
+        position: absolute;
+        width: 100%;
+        /* margin-left: auto;
+        margin-right: auto; */
+        left: 0;
+        right: 0;
+        bottom:0;
+        /* text-align: center; */
+    }
+    .fifth-container{
+        background-position: top;
+    }
 }
 
 .sixth-container{
+    position: relative;
     padding: 1em;
+    width: inherit;
 }
 
 .list-flex{
     display: flex;
-    padding: 1.5em;
+   
 }
+
+.sixth-container-img img{
+    width: 100%;
+    object-fit:contain;
+}
+
+
 
 @media (min-width: 60em) {
     .sixth-container{
         display: flex;
-    } 
+        justify-content: space-evenly;
+    }
+    .article-sixth{
+        width: 50%;
+    }
+    .sixth-container .second-container-img{
+        flex-grow: 1;
+    }
+    
 }
 
 .seventh-container{
@@ -381,10 +425,18 @@ li:first-child a {
     place-items: center;
 }
 .seventh-container span{
-    width: 25%;
+    width: 60%;
 }
-.seventh-container h2{
+.seventh-container h4{
     text-align: center;
+    letter-spacing: 0.2px;
+}
+
+.eight-container{
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .eight-container > *{
@@ -401,12 +453,12 @@ li:first-child a {
     object-fit: contain;  
 }
 
-@media (min-width: 50em) {
+/* @media (min-width: 50em) {
     .eight-container{
         display: flex;
         justify-content: space-evenly;
     } 
-}
+} */
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
