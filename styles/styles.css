@@ -36,7 +36,7 @@ dd {
     margin: 0;
 }
 
-h4 {
+h4,h3 {
     align-self: stretch;
     color: #0E0A23;
     flex-grow: 0;
