@@ -31,7 +31,8 @@ a,
 figure,
 blockquote,
 dl,
-dd {
+dd
+button {
     font-family: 'Inter';
     font-style: normal;
     margin: 0;
@@ -324,7 +325,7 @@ li:first-child a {
     .box-element>* {
         gap: 1;
     }
-    
+
     .box-element-image img {
         /* padding-top: 1.3em;
         padding-left: 0.3em; */
